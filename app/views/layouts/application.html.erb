@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
+    <%= render "/refinery/head" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+    <%= render "/refinery/javascripts" %>
   </head>
-
-  <body>
-
-    <%= yield %>
-
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div id="page_container">
+      <header class="row" id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="orbit-container"><ul class="example-orbit orbit-slides-container" data-orbit="" style="height: 388px;">
+            <li class="active" style="z-index: 4; margin-left: 0%;"><img src="http://placehold.it/1000x400&amp;text=[%20img%201%20]"></li>
+            <li class="" style="z-index: 2; margin-left: 100%;"><img src="http://placehold.it/1000x400&amp;text=[%20img%202%20]"></li>
+            <li class="" style="z-index: 2; margin-left: 100%;"><img src="http://placehold.it/1000x400&amp;text=[%20img%203%20]"></li>
+          </ul><a href="#" class="orbit-prev"><span></span></a><a href="#" class="orbit-next"><span></span></a><div class="orbit-timer paused"><span></span><div class="orbit-progress" style="width: 0%;"></div></div><div class="orbit-slide-number"><span>1</span> of <span>3</span></div><div class="orbit-bullets-container"><ol class="orbit-bullets"><li data-orbit-slide="0" class="active"></li><li data-orbit-slide="1" class=""></li><li data-orbit-slide="2" class=""></li></ol></div></div>
+        </div>
+      </div>
+      <section class="row" id="page">
+        <%= yield %>
+      </section>
+      <footer class="row">
+        <%= render "/refinery/footer" -%>
+      </footer>
+    </div>
   </body>
 </html>
