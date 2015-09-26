@@ -49,6 +49,10 @@ gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 # The default authentication adapter
 gem 'refinerycms-authentication-devise', '~> 1.0'
 
+gem 'refinerycms-portfolio', github: 'refinery/refinerycms-portfolio', branch: 'master'
+
+gem "jquery-slick-rails" #  the jQuery Slick plugin by Ken Wheeler - in the rails pipeline
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

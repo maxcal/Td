@@ -14,6 +14,20 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery.slick
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+    var $doc = $(document);
+
+    $doc.foundation();
+    $doc.on('page:change', function(e){
+
+        console.log($('.slick-gallery'));
+
+        $('.slick-gallery').slick({
+            // options
+        });
+    });
+});
+

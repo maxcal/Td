@@ -1,12 +1,12 @@
 # encoding: utf-8
 Refinery::Pages.configure do |config|
   # Configure specific page templates
-  # config.types.register :home do |home|
-  #   home.parts = %w[intro body]
-  # end
+  config.types.register :home do |home|
+    home.parts = %w[intro left middle right]
+  end
 
   # Configure global page default parts
-  # config.default_parts = ["Body", "Side Body"]
+  config.default_parts = ["Left Col", "Middle Col", "Right Col"]
 
   # Configure whether to allow adding new page parts
   # config.new_page_parts = false

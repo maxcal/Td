@@ -8,23 +8,14 @@
   </head>
   <body id="<%= canonical_id @page %>">
     <%= site_bar -%>
-    <div id="page_container">
+    <div id="page_container" class="row">
       <header class="row" id="header">
         <%= render "/refinery/header" -%>
       </header>
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="orbit-container"><ul class="example-orbit orbit-slides-container" data-orbit="" style="height: 388px;">
-            <li><img src="http://placehold.it/1000x400&amp;text=[%20img%201%20]"></li>
-            <li><img src="http://placehold.it/1000x400&amp;text=[%20img%202%20]"></li>
-            <li><img src="http://placehold.it/1000x400&amp;text=[%20img%203%20]"></li>
-          </ul><a href="#" class="orbit-prev"><span></span></a><a href="#" class="orbit-next"><span></span></a><div class="orbit-timer paused"><span></span><div class="orbit-progress" style="width: 0%;"></div></div><div class="orbit-slide-number"><span>1</span> of <span>3</span></div><div class="orbit-bullets-container"><ol class="orbit-bullets"><li data-orbit-slide="0" class="active"></li><li data-orbit-slide="1" class=""></li><li data-orbit-slide="2" class=""></li></ol></div></div>
-        </div>
-      </div>
-      <section class="row" id="page">
+      <section id="page">
         <%= yield %>
       </section>
-      <footer class="row">
+      <footer id="footer" data-turbolinks-permanent>
         <%= render "/refinery/footer" -%>
       </footer>
     </div>

@@ -14,6 +14,48 @@
  *= require refinery/formatting
  *= require refinery/theme
  *= require_self
- *= require foundation_and_overrides
-
  */
+
+@import 'foundation_and_overrides';
+@import 'slick';
+@import 'slick-theme';
+
+#page_container {
+  margin-top: 25px;
+}
+
+body {
+  background-image:  image-url('maple');
+}
+
+blockquote {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+#footer {
+  text-align: center;
+}
+
+.testimonial blockquote {
+
+  background-color: #fdf6f7;
+
+  &:before {
+    content: open-quote open-quote;
+  }
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.slick-gallery {
+  margin-left: 0;
+}

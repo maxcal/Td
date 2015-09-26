@@ -1,0 +1,33 @@
+<% if @gallery && @gallery.items.present? %>
+<div class="slideshow">
+  <%= render partial: 'shared/slideshow' %>
+</div>
+<% end %>
+
+<article class="body panel">
+    <%= raw @page.content_for(:body) %>
+</article>
+
+<div class="callout">
+  <% [:left_col, :right_col].each do |col| %>
+    <div class="large-6 columns testimonial <%= col.to_s %>">
+      <%= raw @page.content_for(col) %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h4>If you like what you see, please contact us.</h4>
+      <div class="row">
+        <div class="large-9 columns">
+          <p>We'd love to hear from you, we enjoy new home construction as well as remodel projects.</p>
+        </div>
+        <div class="large-3 columns">
+          <a href="#" class="radius button right">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

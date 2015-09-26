@@ -4,6 +4,7 @@
 <%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? -%>
 <%= raw %(<link rel="canonical" href="#{request.protocol}#{request.host_with_port}#{@canonical}" />) if @canonical.present? -%>
 <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <%= yield :meta %>
 
 <%= stylesheet_link_tag "application" %>
